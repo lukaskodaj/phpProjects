@@ -1,0 +1,60 @@
+
+{block content}
+
+<div class="container">
+
+    <div class="informations">
+
+        <div class="informationsContent">
+
+
+
+
+
+            <h3>Informácie</h3>
+
+            <p>
+                Aplikácia po registrácii poskytuje prehľadný zápisnik k prvkom roztriedených podľa klasifikácie.
+                <br>
+                <br>
+                Informácie napísané vo vašom účte k jednotlivým prvkom sú prístupné len pre majiteľa účtu a po odhlásení
+                z aplikácie sú prístupné pôvodné informácie.
+
+            </p>
+
+            <br>
+            <br>
+
+            {if $state == "send"}
+                <p class="informationsBanner">Formulár bol odoslaný</p>
+            {/if}
+
+            <h5>
+                V prípade otázok k obsahu, prípadných chýb alebo nejasností ma prosím kontaktujte prostredníctvom formuláru
+            </h5>
+
+		{form supportForm}
+
+            <div>
+                <input type="email"  class="w3-input w3-border w3-round-large"  n:name="email" size="20" >
+
+                <textarea n:name="supportText"></textarea>
+
+                <input class="newPasswordSendButton" n:name="send">
+            </div>
+
+        {/form}
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function turnOnSpinner() {
+        $(window).bind('beforeunload', function() {
+            document.getElementById('inSpinner').style.display = "inline-block";
+        });
+    }
+</script>
+
+

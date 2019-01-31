@@ -1,0 +1,50 @@
+
+
+
+{block content}
+
+<div class="container" onload="document.getElementById('inSpinner').style.display = 'none';">
+
+	<div class="signIn">
+
+		<div class="signInContent">
+
+
+			<div id="inSpinner" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+	<h3>Prihlásenie</h3>
+
+
+{if $state == "registered"}
+<p>Boli ste úspešne zaregistrovaný</p>
+{/if}
+
+{if $state == "incorrectData"}
+<p>Nesprávne prihlasovacie údaje</p>
+{/if}
+
+		{form signInForm}
+
+		<input type="text"  class="w3-input w3-border w3-round-large"  n:name="username">
+
+		<input type="password"  class="w3-input w3-border w3-round-large"  n:name="password">
+
+		<input class="signInSendButton" n:name="send" onclick="turnOnSpinner();">
+	
+		{/form}
+
+			<p><a n:href="ForgottenPassword:newPassword" onclick="turnOnSpinner();">Zabudli ste svoje heslo?</a></p>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	function turnOnSpinner() {
+        $(window).bind('beforeunload', function() {
+            document.getElementById('inSpinner').style.display = "inline-block";
+        });
+	}
+</script>
+
+

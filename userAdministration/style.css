@@ -1,0 +1,85 @@
+* {
+  margin: 0px;
+}
+
+
+form {
+	padding: 10px;
+}
+
+.messageAdd {
+  display: flex;
+  justify-content: center;
+  color: #3cb371;
+  font-size: 25px;
+}
+
+
+body {
+  font-size: 120%;
+  background: #ffffcc;
+}
+
+
+.header {
+  width: 87% ;
+  margin: 50px auto 0px;
+  color: white;
+  background: #ff0000;
+  /*background: #cd5c5c;*/
+  text-align: center;
+  border: 1px solid #B0C4DE;
+  border-radius: 10px 10px 10px 10px;
+  padding: 20px;
+}
+
+.addform {
+  display: flex;
+  justify-content: center;	
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn:hover {
+    background-color: #ffffcc; 
+    color: black;
+}
+
+.input-group {
+  margin: 10px 0px 10px 0px;
+}
+.input-group label {
+  font-size: 18px;
+}
+
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.input-group button {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: #ff0000;
+  border: none;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  border: 2px solid #ff0000;
+
+}

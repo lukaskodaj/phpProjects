@@ -1,0 +1,45 @@
+<html>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+<div class="addForm">
+		
+	<form action="index.php" method="post">
+
+		<div class="input-group">
+		<input type="text" name="name" placeholder="name"required >
+		</div>
+		
+		<div class="input-group">
+		<input type="text" name="surname" placeholder="surname" required>
+		</div>
+		
+		<div class="input-group">
+		<input type="number" name="age" placeholder="age" required>	  
+		</div>
+		
+		<div class="input-group">
+		<input type="text" name="city" placeholder="city" required>	  
+		</div>	
+		
+		<div class="input-group">
+		<input id="password" type="password" name="password" placeholder="password" required>
+		</div>
+		
+		<div class="input-group">
+		<input id="confirmPassword" type="password" name="confirmPassword" placeholder="confirm password" required>
+		</div>
+		
+		<div class="input-group">
+		<button type="submit" class="btn" name="add_user" >add user</button>
+		</div>
+		
+		<input  type="hidden" name="successful" value="success">
+		
+		<script type="text/javascript" src="passwordValidation.js"></script>
+		
+	</form>
+	
+</div>
+
+</html>

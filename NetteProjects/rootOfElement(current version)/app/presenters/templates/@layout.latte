@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+	
+	<title>Root of Element</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Nette Framework Static Web">
+    <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="{$basePath}/js/netteForms.js"></script>
+
+    <link rel="shortcut icon" href="{$basePath}/pizzaicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="shortcut icon" href="{$basePath}/images/atom2icon.ico" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{$basePath}/bootstrap4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="{$basePath}/bootstrap4/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="{$basePath}/css/@layout.css">
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    {block scripts}
+        <script src="{$basePath}/js/nette.ajax.js"></script>
+        <script src="{$basePath}/js/main.js"></script>
+    {/block}
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-light">
+
+
+    <span class="navbar-brand"><a n:href="Homepage:"><img class="roeLogo" src="{$basePath}/images/atom2.png" alt="Hlavná stránka"></a></span>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span> <i class="fa fa-bars"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+        <ul class="navbar-nav mr-auto">
+
+
+        </ul>
+
+
+
+        <ul class="navbar-nav ml-auto">
+
+            {if $user->isInRole('admin')}
+                <li class="mainPanelItem"> <div class="nav-item"><a n:href="RoeManagement:management">RoE manažment </a></div></li>
+            {/if}
+
+            <li class="mainPanelItem"> <div class="nav-item"><a n:href="Info:informations notSend"> <span class="fa fa-info-circle"> </span> Informácie  </a></div></li>
+
+            {if !$user->loggedIn}
+
+
+
+
+
+           <li class="mainPanelItem"> <div class="nav-item"><a n:href="Sign:up"> <span class="fa fa-user-plus"> </span> Registrácia </a></div></li>
+                <li class="mainPanelItem"> <div class="nav-item"><a n:href="Sign:in"> <span class="fa fa-sign-in"> </span> Prihlásiť sa </a></div></li>
+
+            {/if}
+
+            {if $user->loggedIn}
+
+                <li class="mainPanelItem"> <div class="nav-item"><a n:href="Sign:out"> <span class="fa fa-sign-out"> </span> Odhlásiť sa </a></div></li>
+
+            {/if}
+
+        </ul>
+    </div>
+</nav>
+
+
+
+	{include content}
+
+	
+</body>
+
+
+</html>

@@ -1,0 +1,44 @@
+
+
+{block content}
+
+
+<div class="container">
+
+    <div class="usersView">
+
+        <div class="usersViewContent">
+
+            {if $user->isInRole('admin')}
+
+            <h3>Prehľad používateľov</h3>
+
+                {snippet ajaxChangeUsersViewContent}
+                    {foreach $currentUsers as $key => $item}
+					{if $item->username != "default"}
+                        <div class="usersViewTableContent">
+                             <table class="usersViewItem">
+                                    <tr> <th>Používateľské meno</th> <td>{$item->username}</td> </tr>
+                                    <tr> <th>Meno</th> <td>{$item->name}</td> </tr>
+                                    <tr> <th>Priezvisko</th> <td>{$item->surname}</td> </tr>
+                                    <tr> <th>E-mail</th> <td>{$item->email}</td> </tr>
+                                    <tr> <th>Mesto</th> <td>{$item->city}</td> </tr>
+                                    <tr> <th>Štát</th> <td>{$item->state}</td> </tr>
+                                    <tr> <th>Rola</th> <td>{$item->role}</td> </tr>
+                                    <tr> <td class="deleteUser" align="center" colspan="2"><a n:href="deleteUser! $item->id" class="ajax"><i class="fa fa-remove"></i></a> </td> </tr>
+                             </table>
+                        </div>
+						{/if}
+                    {/foreach}
+                {/snippet}
+
+                {else}
+
+                <p>K tomuto obsahu nemáte povolenie na prístup</p>
+
+            {/if}
+
+        </div>
+    </div>
+</div>
+

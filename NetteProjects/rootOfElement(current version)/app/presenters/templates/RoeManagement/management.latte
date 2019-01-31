@@ -1,0 +1,26 @@
+
+
+{block content}
+
+<div class="container">
+
+    <div class="roeManagement">
+
+        <div class="roeManagementContent">
+
+            {if $user->isInRole('admin')}
+
+            <h3>RoE manažment</h3>
+
+        <a n:href="UserAdministration:usersView">Správa používateľov</a>
+
+            {else}
+
+                <p>K tomuto obsahu nemáte povolenie na prístup</p>
+
+            {/if}
+
+        </div>
+    </div>
+</div>
+

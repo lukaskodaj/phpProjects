@@ -1,0 +1,110 @@
+
+
+{block content}
+
+
+<div class="container">
+
+	<div class="registration">
+
+		<div class="registrationContent">
+
+
+		<h3 n:block=title>Registrácia</h3>
+
+
+		{form signUpForm}
+			<label >Meno</label>
+			<input type="text" class="w3-input w3-border w3-round-large" n:name="name">
+
+
+
+			<label >Priezvisko</label>
+			<input type="text" class="w3-input w3-border w3-round-large" n:name="surname">
+
+
+
+			<label >Používateľské meno</label>
+			<input class="w3-input w3-border w3-round-large" id="username" n:name="username" type="text" onkeyup="checkUsernameDuplicity()">
+
+			<div id="usernameWarn" class="w3-panel w3-red" style="display: none; border-radius: 10px;">
+				<p style="padding: 4px;">Používateľské meno už existuje</p>
+			</div>
+
+
+			<label >E-mail</label>
+			<input type="text" class="w3-input w3-border w3-round-large" n:name="email">
+
+
+
+			<label>Mesto</label>
+			<input type="text" class="w3-input w3-border w3-round-large" n:name="city">
+
+
+			<label class="stateRegLabel">Štát</label>
+			{input state}
+
+
+			<label>Heslo</label>
+			<input class="w3-input w3-border w3-round-large" id="registrationPassword" n:name="pwd" type="password">
+
+			<div id="passwordWarn" class="w3-panel w3-red" style="display: none; border-radius: 10px;">
+				<p style="padding: 4px;">Heslo musí byť minimálne 10 znakov dlhé</p>
+			</div>
+
+
+			<label>Heslo(overenie)</label>
+			<input type="password" class="w3-input w3-border w3-round-large" n:name="pwd2">
+
+
+			<input class="registrationSendButton" n:name="send" id="sendButton">
+		{/form}
+
+	</div>
+	</div>
+</div>
+
+
+
+		<script>
+			function checkUsernameDuplicity()
+			{
+                document.getElementById('username').style.color = "green";
+                document.getElementById('usernameWarn').style.display = "none";
+                document.getElementById("sendButton").disabled = false;
+
+
+				{foreach $this->getParameter('users') as $key => $item}
+					if(document.getElementById('username').value == {$item->username})
+					{
+
+					    document.getElementById('usernameWarn').style.display = "block";
+					    document.getElementById('username').style.color = "red";
+                        document.getElementById("sendButton").disabled = true;
+
+					}
+				{/foreach}
+			}
+		</script>
+
+
+		<script>
+            $('#registrationPassword').keyup(function(e) {
+
+                var matches = this.value.match(/\d+/g);
+
+                if(this.value.length < 10)
+                {
+                    document.getElementById('passwordWarn').style.display = "block";
+                    document.getElementById("sendButton").disabled = true;
+                    document.getElementById('registrationPassword').style.color = "red";
+
+                } else {
+                    document.getElementById('passwordWarn').style.display = "none";
+                    document.getElementById("sendButton").disabled = false;
+                    document.getElementById('registrationPassword').style.color = "green";
+                }
+
+            });
+		</script>
+
