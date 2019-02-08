@@ -6,6 +6,7 @@ include "FileStorage.php";
 include "DBStorage.php";
 
 $app = new App();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

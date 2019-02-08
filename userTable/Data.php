@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hrko
- * Date: 13. 11. 2018
- * Time: 16:39
- */
+
 
 class Data
 {

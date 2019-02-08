@@ -92,7 +92,6 @@ class UserManager
 	public function getUsers()
 	{
 		$result = Database::query('SELECT * FROM user');
-        $data = $result;
         return $result;
 	}
 	

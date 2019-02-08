@@ -1,10 +1,10 @@
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `surname` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `password` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `surname` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `age` int(11) NOT NULL,
-  `city` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `city` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `dateCreation` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

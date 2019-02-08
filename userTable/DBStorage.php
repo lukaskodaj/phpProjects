@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hrko
- * Date: 13. 11. 2018
- * Time: 17:27
- */
+
 
 class DBStorage implements IStorage
 {
@@ -49,8 +44,6 @@ class DBStorage implements IStorage
         }
 
         $result = [];
-        //$sql = "SELECT * FROM person";
-
 
         $dbResult = $this->db->query($sql);
         if ($dbResult->num_rows > 0) {

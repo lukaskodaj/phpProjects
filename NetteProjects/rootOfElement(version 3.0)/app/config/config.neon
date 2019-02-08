@@ -1,0 +1,39 @@
+
+
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+session:
+	expiration: 1 days
+	autoStart: smart 
+	debugger: true
+
+
+services:
+	authenticator: App\Model\MyAuthenticator 
+	router: App\RouterFactory::createRouter
+	- App\Model\ForgottenPasswordLogic
+	- App\Model\Mailer
+	- App\Model\HomepageLogic
+	- App\Model\InfoLogic
+	- App\Model\SignLogic
+	- App\Model\UserAdministrationLogic
+
+database:
+	dsn: 'mysql:host=localhost;dbname=rootofelement'
+	user: root1
+	password: 000000000
+	
+
+mail:
+    smtp: true # zapne SmtpMailer místo SendmailMailer
+    host:
+    username: *****
+    password: *****
+
