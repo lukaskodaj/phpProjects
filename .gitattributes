@@ -1,5 +1,4 @@
 # Auto detect text files and perform LF normalization
-NetteProjects/rootOfElement(version3.0)/www/* linguist-vendored=true
-NetteProjects/rootOfElement(version3.0)/js/* linguist-vendored=true
+NetteProjects/* linguist-vendored=false
 
 
